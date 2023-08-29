@@ -1,18 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Home from './Home';
-import { UserProvider } from './context/user';
+// import { UserProvider } from './context/user';
 
 function App() {
 
   return (
-    <UserProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={ <Home /> } />
-        </Routes>
-      </BrowserRouter>
-    </UserProvider>
+    // <UserProvider>
+      <Home />
+    // </UserProvider>
   )
 }
 

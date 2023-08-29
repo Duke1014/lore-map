@@ -1,18 +1,18 @@
 import React, { useState, useContext, useEffect } from 'react'
-import LogIn from './LogIn'
+import LogIn from './Login'
 import SignUp from './SignUp'
 import LoginAssistant from './LoginAssistant'
-import Admin from './Admin'
-import Loader from './Loader'
-import { UserContext } from './context/user'
+// import Admin from './Admin'
+// import Loader from './Loader'
+// import { UserContext } from './context/user'
 import Footer from './Footer'
-import Grid from './Grid'
+// import Grid from './Grid'
 
 let showAdmin = false
 
 export default function () {
 
-    const { user, loggedIn, auth, db, loader } = useContext(UserContext)
+    // const { user, loggedIn, auth, db, loader } = useContext(UserContext)
     const [signLog, setSignLog] = useState(false) 
     const [loginState, setLoginState] = useState(false)
     const [adminMode, setAdminMode] = useState(false)
@@ -46,15 +46,16 @@ export default function () {
 
   return (
     <div>
-        {loader ? <>
+        <p>PEEPEE POO POO</p>
+        {/* {loader ? <>
             <Loader />
-        </> : <>
+        </> : <> */}
             {adminMode ? <>
                 <Admin />
             </> : <>
-                {loggedIn ? <>
+                {/* {loggedIn ? <>
                     <Grid />
-                </> : <> 
+                </> : <>  */}
                     {loginState ? <>
                         {signLog ? <>
                             <SignUp auth={auth} db={db} handleLogClick={handleLogClick} />
@@ -63,16 +64,16 @@ export default function () {
                         </>}
                     </> : <></>}
                     <LoginAssistant handleLogClick={handleLogClick} handleSignClick={handleSignClick} />
-                </>}
-            </>}
-            
+                {/* </>} */}
+            {/* </>} */}
+
             <Footer 
                 scrolled={scrolled}
-                user={user} 
+                // user={user} 
                 setAdminMode={setAdminMode}
                 adminMode={adminMode}
                 showAdmin={showAdmin} 
-                auth={auth} 
+                // auth={auth} 
             />
         </>}
     </div>
