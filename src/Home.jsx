@@ -3,10 +3,10 @@ import LogIn from './Login'
 import SignUp from './SignUp'
 import LoginAssistant from './LoginAssistant'
 // import Admin from './Admin'
-// import Loader from './Loader'
+import Loader from './Loader'
 import { UserContext } from './context/user'
 import Footer from './Footer'
-// import Grid from './Grid'
+import Grid from './Grid'
 
 let showAdmin = false
 
@@ -46,15 +46,15 @@ export default function () {
 
   return (
     <div>
-        {/* {loader ? <>
+        {loader ? <>
             <Loader />
-        </> : <> */}
+        </> : <>
             {adminMode ? <>
                 <Admin />
             </> : <>
-                {/* {loggedIn ? <>
+                {loggedIn ? <>
                     <Grid />
-                </> : <>  */}
+                </> : <> 
                     {loginState ? <>
                         {signLog ? <>
                             <SignUp auth={auth} db={db} handleLogClick={handleLogClick} />
@@ -63,8 +63,8 @@ export default function () {
                         </>}
                     </> : <></>}
                     <LoginAssistant handleLogClick={handleLogClick} handleSignClick={handleSignClick} />
-                {/* </>} */}
-            {/* </>} */}
+                </>}
+            </>}
 
             <Footer 
                 scrolled={scrolled}

@@ -1,0 +1,265 @@
+@import url(//db.onlinewebfonts.com/c/bee05807d8579c5b75e5ed10a9314eb0?family=CF+Remington+Typewriter);
+
+.heresy-grid .stamp {
+    box-sizing: border-box;
+    /* background: radial-gradient(red, black, transparent, transparent); */
+    background: transparent;
+    background-size: 60px 60px;
+    /* height: max-content; */
+    /* min-height: 100px; */
+    /* min-width: 100px; */
+    /* border: 2px solid red; */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* scroll-snap-type: proximity; */
+    scroll-snap-align: center;
+    display: grid;
+    place-items: center;
+    place-self: center;
+    width: max-content;
+    z-index: 5;
+    margin-inline: 16px;
+    position: relative;
+    padding: 0px !important;
+    /* opacity: 0.5; */
+}
+.heresy-grid-bg {
+    display:none;
+}
+
+.title-container {
+    padding: 8rem 3rem 0 3rem;
+    height: 20rem;
+}
+
+.madness-start {
+    width: 100vw;
+}
+.progress-bar-outer {
+    border: 1px solid white;
+    width: 100px;
+}
+
+:global(body) {
+    background-size: cover;
+    background-position: center;
+}
+
+@supports (background-attachment: fixed) {
+    :global(body) {
+        background-attachment: fixed;
+    }
+}
+
+:global(:root) {
+    --spacing: 8px;
+    --border: 4px;
+}
+:global(*) {
+    font-family: 'Archaic1897', serif;
+}
+
+.madness-title {
+    font-family: CFRemingtonTypewriter-Regul;
+}
+
+.madness-tab-container {
+    border-bottom: 1px solid black;
+    font-family: CFRemingtonTypewriter-Regul;
+}
+
+.madness-tab,
+.redacted {
+    display: block;
+    padding: 2rem 2rem 0 2rem;
+    width: 24%;
+    text-align: center;
+    text-indent: 0%;
+    /* background-color: rgba(231, 214, 183, 0.336); */
+    /* border: 1px solid black;  */
+    /* border-top-right-radius: 40% 20%; */
+    /* border-top-left-radius: 40% 20%; */
+    font-family: CFRemingtonTypewriter-Regul;
+}
+
+.madness-tab {
+    cursor: pointer;
+}
+
+.redacted {
+    color: red;
+}
+
+@font-face {
+    font-family: CFRemingtonTypewriter-Regul;
+    src: url(font/CFRemingtonTypewriter-Regul.ttf) format("truetype");
+}
+
+.madness-tab:hover {
+    background-color: rgb(231, 214, 183);
+}
+
+.heresy-grid .stamp .disabled {
+    cursor: not-allowed;
+}
+
+.heresy-grid .stamp p {
+    pointer-events: none;
+}
+.heresy-grid .stamp p {
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-indent: 0%;
+    text-align: center;
+}
+
+.heresy-grid .stamp img {
+    cursor: pointer;
+}
+
+.heresy-grid-bg {
+    /* background-image: url('./img/Heresy-Lines.png'); */
+    /* z-index: 100; */
+    width: 100vw;
+    /* display: none; */
+}
+.vertical-line {
+    justify-self: center;
+    margin-block: calc(var(--border) * -1);
+    border-radius: 100px;
+    border-block: 0px solid transparent !important;
+}
+
+.horizontal-line {
+    align-self: center;
+    margin-inline: calc(var(--border) * -1);
+    border-radius: 100px;
+    border-inline: 0px solid transparent !important;
+}
+
+.horizontal-line,
+.vertical-line {
+    padding: calc(var(--spacing) - (var(--spacing) - var(--border)));
+    background-color: white;
+    background-clip: padding-box;
+}
+
+.horizontal-line#current,
+.vertical-line#current {
+    background-color: red;
+}
+
+.horizontal-line#for-later,
+.vertical-line#for-later {
+    background-color: green;
+}
+
+.heresy-grid {
+    grid-template-columns: repeat(25, 1fr);
+    /* grid-template-rows: repeat(28, 1fr); */
+    grid-template-rows: repeat(27, 1fr);
+    /* grid-template-rows: 1fr 1fr 1fr min-content 1fr 1fr 1fr min-content 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr min-content min-content min-content 1fr 1fr 1fr 1fr; */
+}
+
+@media only screen and (max-width: 600px) {
+    .heresy-grid {
+        grid-template-columns: repeat(25, 1fr);
+        grid-template-rows: repeat(30, 1fr);
+        column-gap: 10px;
+    }
+}
+
+.trans-heresy {
+    z-index: 1;
+    pointer-events: none;
+}
+
+section {
+    width: 100vw;
+}
+:global(.locked) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+:global(.unlock .locked) {
+    animation: ping 3s cubic-bezier(0, 0, 0.2, 1) 1 forwards;
+}
+
+@keyframes ping {
+    0%,
+    80% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    0%,
+    5%,
+    10%,
+    15%,
+    20%,
+    25%,
+    30%,
+    35%,
+    40%,
+    45%,
+    50%,
+    55%,
+    60%,
+    65%,
+    70%,
+    75%,
+    80%,
+    85%,
+    90% {
+        margin-left: 5px;
+        margin-right: -5px;
+    }
+    3%,
+    8%,
+    13%,
+    18%,
+    23%,
+    28%,
+    33%,
+    38%,
+    43%,
+    48%,
+    53%,
+    58%,
+    63%,
+    68%,
+    73%,
+    78%,
+    83%,
+    88% {
+        margin-right: 5px;
+        margin-left: -5px;
+    }
+
+    99% {
+        transform: scale(2);
+        opacity: 0;
+        margin-inline: 0;
+    }
+    100% {
+        display: none;
+    }
+}
+
+@keyframes glow {
+    0% {
+        background-color: none;
+    }
+
+    50% {
+        background-color: gold;
+    }
+
+    100% {
+        background-color: none;
+    }
+}

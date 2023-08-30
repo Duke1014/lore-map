@@ -141,7 +141,7 @@ function UserProvider({ children }) {
     }
 
     const login = (user) => {
-        debugger;
+        // debugger;
         signInWithEmailAndPassword(auth, user.email, user.password)
         .then((userCredential) => {
             // console.log(userCredential)
@@ -205,11 +205,19 @@ function UserProvider({ children }) {
 
     useEffect(() => {
         onAuthStateChanged(auth, (authUser) => {
+            // debugger;
             if (authUser) {
+                // debugger;
                 user.uid = authUser.uid;
+                
                 setLoggedIn(true)
-                setLoader(false)
-                checkAdmin(authUser.uid);
+                setTimeout(() => {
+                    setLoader(false);
+                    console.log(loader); // This might still show the previous value, which is expected
+                    console.log(`${loader} (should return false)`); // This might still show true due to async behavior
+                }, 0);
+                // debugger;
+                // checkAdmin(authUser.uid);
                 checkNodes(authUser.uid);
             } else {
                 setNodes({})
@@ -376,20 +384,20 @@ function UserProvider({ children }) {
         }
     }
 
-    async function checkAdmin(authUID) {
-        setLoader(true)
-        const actSesSnap = await getDoc(doc(db, 'users', authUID));
+    // async function checkAdmin(authUID) {
+    //     setLoader(true)
+    //     const actSesSnap = await getDoc(doc(db, 'users', authUID));
 
-        if (actSesSnap.exists()) {
-            let snapData = actSesSnap.data();
-            if (snapData.isAdmin) {
-                setIsAdmin(snapData.isAdmin)
-                console.log('An admin is in!');
-            }
-        } else {
-            setNodes({})
-        }
-    }
+    //     if (actSesSnap.exists()) {
+    //         let snapData = actSesSnap.data();
+    //         if (snapData.isAdmin) {
+    //             setIsAdmin(snapData.isAdmin)
+    //             console.log('An admin is in!');
+    //         }
+    //     } else {
+    //         setNodes({})
+    //     }
+    // }
 
     function startListener(listener) {
         const listenTo = listener;
