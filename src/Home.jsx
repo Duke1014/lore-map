@@ -4,7 +4,7 @@ import SignUp from './SignUp'
 import LoginAssistant from './LoginAssistant'
 // import Admin from './Admin'
 // import Loader from './Loader'
-// import { UserContext } from './context/user'
+import { UserContext } from './context/user'
 import Footer from './Footer'
 // import Grid from './Grid'
 
@@ -12,7 +12,7 @@ let showAdmin = false
 
 export default function () {
 
-    // const { user, loggedIn, auth, db, loader } = useContext(UserContext)
+    const { user, loggedIn, auth, db, loader } = useContext(UserContext)
     const [signLog, setSignLog] = useState(false) 
     const [loginState, setLoginState] = useState(false)
     const [adminMode, setAdminMode] = useState(false)
@@ -46,7 +46,6 @@ export default function () {
 
   return (
     <div>
-        <p>PEEPEE POO POO</p>
         {/* {loader ? <>
             <Loader />
         </> : <> */}

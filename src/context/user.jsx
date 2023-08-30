@@ -14,11 +14,17 @@ import {
     getDoc,
     onSnapshot,
 } from 'firebase/firestore';
-import { initializeApp } from 'firebase/app';
-import { firebaseConfig } from '../firebaseConfig';
+// import { initializeApp } from 'firebase/app';
+// import { firebaseConfig } from '../firebaseConfig';
+// import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+// import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { app } from '../firebase'; // Adjust the path as needed
+
+
+
 
 const UserContext = React.createContext()
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
@@ -135,6 +141,7 @@ function UserProvider({ children }) {
     }
 
     const login = (user) => {
+        debugger;
         signInWithEmailAndPassword(auth, user.email, user.password)
         .then((userCredential) => {
             // console.log(userCredential)
@@ -143,6 +150,7 @@ function UserProvider({ children }) {
             setLoggedIn(true)
         })
         .catch((error) => {
+            console.error("Firebase Sign-In Error:", error)
             setError(error.message)
         });
     }

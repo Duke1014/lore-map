@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { UserContext } from './context/user';
 // import { reactKey } from './lib/config.js';
-// import paper from './img/vintagepaper4.png'
+import paper from './img/vintagepaper4.png'
 // import Recaptcha from "react-google-recaptcha"
 
 export default function SignUp({ handleLogClick }) {
@@ -49,7 +49,7 @@ export default function SignUp({ handleLogClick }) {
     const [userPassword, setUserPassword] = useState('')
     const [userRepeatPassword, setUserRepeatPassword] = useState('')
     const [checked, setChecked] = useState(true)
-    const [captchaState, setCaptchaState] = useState(false)
+    // const [captchaState, setCaptchaState] = useState(false)
     const [mouseOver, setMouseOver] = useState()
     const [buttonStyle, setButtonStyle] = useState({})
 
@@ -66,9 +66,10 @@ export default function SignUp({ handleLogClick }) {
             password: userPassword,
             marketingOptIn: checked,
         }
-        if (!captchaState) {
-            console.log('do the captcha thing first')
-        } else if (userFirstName === null ||
+        // if (!captchaState) {
+        //     console.log('do the captcha thing first')
+        // } else 
+        if (userFirstName === null ||
             userLastName === null ||
             userPassword === null ||
             userRepeatPassword === null) {
@@ -182,7 +183,7 @@ export default function SignUp({ handleLogClick }) {
                             </label>
                         </div>     
 
-                        {captchaState ? <>
+                        {/* {captchaState ? <>
                             <p className="m-8">Marvelous, you're not a robot! Come join our ranks.</p>
                         </> : <>
                             <div>
@@ -200,7 +201,7 @@ export default function SignUp({ handleLogClick }) {
                                     </p>
                                 </div>
                             </div>
-                        </>}         
+                        </>}          */}
                         {error}
                         <button
                             className="place-self-center"

@@ -1,14 +1,14 @@
 import React from 'react';
 
 import Home from './Home';
-// import { UserProvider } from './context/user';
+import { UserProvider } from './context/user';
 
 function App() {
 
   return (
-    // <UserProvider>
+    <UserProvider>
       <Home />
-    // </UserProvider>
+    </UserProvider>
   )
 }
 
