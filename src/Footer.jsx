@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-// import { UserContext } from './context/user';
+import { UserContext } from './context/user';
 
 export default function Footer({ scrolled, adminMode, setAdminMode }) {
 
-    // const { user, loggedIn, logout, isAdmin } = useContext(UserContext)
+    const { user, loggedIn, logout, isAdmin } = useContext(UserContext)
     let year = new Date().getFullYear();
 
     const scrollToTop = () => {
@@ -25,24 +25,24 @@ export default function Footer({ scrolled, adminMode, setAdminMode }) {
         >
             <p>
                 {year} &copy; Doors of Divergence. <span className="hidden xs:inline-block">
-                    Powered by <a
+                    {/* Powered by <a
                         href="dukenorsworthy.com/"
                         target='_blank'
                         className="hover:underline"
                         // title="Get in touch with Duke"
                         >Duke
-                    </a>.
+                    </a>. */}
                 </span>
                 <span className="hidden xs:inline-block">
                 {/* {isAdmin ? <><button onClick={handleButton}>ADMIN MODE</button></> : <></>} */}
                 </span>
             </p>
             <button className='text-2xl' onClick={scrollToTop}>Scroll To Top</button>
-            {/* {loggedIn ? <>
-                <p>You're currently logged in as {user.name}. <button onClick={() => logout()}>Sign out here.</button></p>
-            </> : <> */}
+            {loggedIn ? <>
+                <p>You're currently logged in as {user.firstName + ' ' + user.lastName}. <button onClick={() => logout()}>Sign out here.</button></p>
+            </> : <>
                 <p>You are not logged in.</p>
-            {/* </>} */}
+            </>}
         </footer>
     </div>
   )

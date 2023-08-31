@@ -613,7 +613,7 @@ export default function Grid() {
                     <h1 className="z-10 text-6xl text-black madness-title" >Madness,<br />1917</h1>
                     <div className='text-black enter-code-two'> <EnterCode /> </div>
                 </div>
-                <div className='flex flex-wrap justify-between w-full px-8 pt-8 text-4xl madness-tab-container' id='madness'>
+                {/* <div className='flex flex-wrap justify-between w-full px-8 pt-8 text-4xl madness-tab-container' id='madness'>
                     {nodes.OutWithABang || nodes.AlienistInTraining ? <>
                         <span
                             className='text-3xl madness-tab'
@@ -621,7 +621,6 @@ export default function Grid() {
                             style={tabStyleOne}   
                         >
                             <img src={divonetab} alt='tab'/>
-                            {/* Elixirs and Alienists */}
                             </span>
                     </>:<>
                         <span
@@ -630,7 +629,6 @@ export default function Grid() {
                             style={tabStyleOne}
                         >
                             <img src={filesSealed} alt='tab'/>
-                            {/* REDACTED */}
                             </span>
                     </>}
                     {nodes.DeathDeferred || nodes.MissionOfMercy ? <>
@@ -640,7 +638,6 @@ export default function Grid() {
                             style={tabStyleTwo}   
                         >
                             <img src={divtwotab} alt='tab'/>
-                            {/* On the Bleeding Edge */}
                             </span>
                     </>:<>
                     <span
@@ -649,7 +646,6 @@ export default function Grid() {
                             style={tabStyleOne}
                         >
                             <img src={filesSealed} alt='tab'/>
-                            {/* REDACTED */}
                             </span>
                     </>}
                     {nodes.Misled || nodes.UnhingedBehavior ? <>
@@ -659,7 +655,6 @@ export default function Grid() {
                             style={tabStyleThree}
                         >
                             <img src={divthreetab} alt='tab'/>
-                            {/* Inner Demons */}
                             </span>
                     </>:<>
                     <span
@@ -668,7 +663,6 @@ export default function Grid() {
                             style={tabStyleOne}
                         >
                             <img src={filesSealed} alt='tab'/>
-                            {/* REDACTED */}
                             </span>
                     </>}
                     {nodes.BetterSafeThanSorry || nodes.ALead ? <>
@@ -678,7 +672,6 @@ export default function Grid() {
                             style={tabStyleFour}  
                         >
                             <img src={divfourtab} alt='tab'/>
-                            {/* A Voice in the Veil */}
                             </span>
                     </>:<>
                     <span
@@ -687,10 +680,9 @@ export default function Grid() {
                             style={tabStyleOne}
                         >
                             <img src={filesSealed} alt='tab'/>
-                            {/* REDACTED */}
                             </span>
                     </>}
-                </div>
+                </div> */}
             </div>
             {madnessMap}
             <div className='space' style={{minHeight: '96px', width: 'full', position: 'absolute'}}>.</div>

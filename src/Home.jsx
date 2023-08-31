@@ -68,11 +68,11 @@ export default function () {
 
             <Footer 
                 scrolled={scrolled}
-                // user={user} 
+                user={user} 
                 setAdminMode={setAdminMode}
                 adminMode={adminMode}
                 showAdmin={showAdmin} 
-                // auth={auth} 
+                auth={auth} 
             />
         </>}
     </div>

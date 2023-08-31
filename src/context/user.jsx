@@ -161,21 +161,24 @@ function UserProvider({ children }) {
         setLoggedIn(false)
     }
 
-    const signup = (user) => {        
-        createUserWithEmailAndPassword(auth, user.email, user.password)
-        .then((userCredential) => {
-            // console.log(userCredential);
-            user.uid = userCredential.user.uid;
-            saveUser();
-        })
-        .then(() => {
-            setUser(user)
-            setLoggedIn(true)
-        })
-        .catch((error) => {
-            setError(error.message)
-        })
-    }
+    const signup = async (user) => {
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, user.email, user.password);
+            const userForFirestore = {
+                uid: userCredential.user.uid,
+                name: user.firstName + ' ' + user.lastName,
+                email: user.email,
+                marketing: user.marketingOptIn,
+                nodes: {},
+                lastNode: ""
+            };
+            await saveUser(userForFirestore);
+            setUser(user);
+            setLoggedIn(true);
+        } catch (error) {
+            setError(error.message);
+        }
+    };
 
     const sendReset = (email = user.email) => {
         sendPasswordResetEmail(auth, email)
@@ -189,18 +192,15 @@ function UserProvider({ children }) {
         });
     }
 
-    async function saveUser() {
+    async function saveUser(userForFirestore) {
         const userRef = doc(db, 'users', user.uid);
+        // debugger
         await setDoc(
             userRef,
-            {
-                uid: user.uid,
-                name: user.firstName + ' ' + user.lastName,
-                email: user.email,
-                marketing: user.marketingOptIn,
-            },
+            userForFirestore,
             { merge: true }
         );
+        // debugger
     }
 
     useEffect(() => {
@@ -213,12 +213,12 @@ function UserProvider({ children }) {
                 setLoggedIn(true)
                 setTimeout(() => {
                     setLoader(false);
-                    console.log(loader); // This might still show the previous value, which is expected
-                    console.log(`${loader} (should return false)`); // This might still show true due to async behavior
-                }, 0);
+                }, 1500);
                 // debugger;
                 // checkAdmin(authUser.uid);
                 checkNodes(authUser.uid);
+                debugger
+                
             } else {
                 setNodes({})
                 setLoader(false)
@@ -231,6 +231,8 @@ function UserProvider({ children }) {
         const actSesSnap = await getDoc(doc(db, 'users', authUID));
         if (actSesSnap.exists()) {
             let snapData = actSesSnap.data();
+            // debugger
+
             if (snapData.nodes) {
                 setNodes(snapData.nodes)
                 user.name = snapData.name;
