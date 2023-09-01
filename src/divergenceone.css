@@ -1,0 +1,285 @@
+@import url('https://fonts.cdnfonts.com/css/cf-remington-typewriter');
+                
+body .madness {
+    font-family: CFRemingtonTypewriter-Regul;
+    background-image: url('./img/Background2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-color: rgba(229,181,117,255);
+    width: 100vw;
+}
+/* @media only screen and (min-width: 2000px) {
+    body .madness {
+        background-size: 100% 100%;
+        ;
+    }
+} */
+   
+@font-face {
+    font-family: CFRemingtonTypewriter-Regul;
+    src: url(font/CFRemingtonTypewriter-Regul.ttf) format("truetype");
+}
+
+/* @font-face {
+    font-family: CF Remington Typewriter;
+    src: url(font/Archaic1897.ttf) format("truetype");
+} */
+/* 
+.madness-grid-container {
+    width: 100vw;
+} */
+
+.madness-grid .checkbox {
+    /* box-sizing: border-box; */
+    /* background: transparent; */
+    /* background-size: 60px 60px; */
+    scroll-snap-align: center;
+    display: grid;
+    place-items: center;
+    place-self: center;
+    width: 200px;
+    height: 200px;
+    z-index: 5;
+    /* margin-inline: 16px; */
+    position: relative;
+}
+
+.madness-grid {
+    grid-template-columns: repeat(24, min-content);
+    /* grid-template-rows: repeat(28, 1fr); */
+    grid-template-rows: repeat(33, min-content);
+    /* grid-template-rows: min-content min-content min-content min-content min-content min-content min-content 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr min-content min-content min-content min-content min-content; */
+    padding: 4rem 0rem 6rem 1rem;
+    /* border: 1px solid black; */
+}
+
+.no-symptoms, .symptom-found {
+    text-align: center !important; 
+    text-indent: 0% !important;
+    margin-bottom: 0 !important;
+}
+
+:global(body) {
+    background-size: cover;
+    background-position: center;
+}
+
+@supports (background-attachment: fixed) {
+    :global(body) {
+        background-attachment: fixed;
+    }
+}
+
+:global(:root) {
+    --spacing: 8px;
+    --border: 4px;
+}
+
+.v-line-dash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* top: 50px; */
+    width: 200px;
+    height: 200px;
+}
+.h-line-dash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* top: 50px; */
+    width: 12rem;
+    height: 12rem;
+}
+
+.v-line-dash img {
+    width: 4%;
+    height: 110%;
+    position: relative;
+    object-fit: contain;
+}
+
+.h-line-dash img {
+    width: auto;
+    height: 4%;
+    position: relative;
+    object-fit: contain;
+    /* top: 60px; */
+}
+
+/* .v-line-dash-cross {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .h-line-dash-cross {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.vertical-line-dash {
+    justify-self: center;
+    margin-block: calc(var(--border) * -1);
+}
+
+.horizontal-line-dash {
+    justify-self: center;
+    margin-inline: calc(var(--border) * -1);
+    transform: rotate(90deg);
+}
+
+.unchecked {
+    text-align: center;
+}
+
+.horizontal-line-dash,
+.vertical-line-dash {
+    padding: calc(var(--spacing) - (var(--spacing) - var(--border)));
+    position: absolute;
+    height: 224px;
+    width: 224px;
+}
+
+.corner-down-right {
+    transform: rotate(270deg);
+    position: absolute;
+}
+.corner-down-left {
+    position: absolute;
+}
+.corner-up-right {
+    transform: rotate(180deg);
+    position: absolute;
+}
+.corner-up-left {
+    transform: rotate(90deg);
+    position: absolute;
+}
+.trans-madness {
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* .madness-grid > * {
+    border: 1px solid red
+} */
+
+/* .madness-grid::before,
+.madness-grid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: black;
+} */
+
+/* .madness-grid::before {
+  left: 0;
+}
+
+.madness-grid::after {
+  right: 0;
+} */
+
+/* create horizontal lines */
+/* .madness-grid > *:nth-child(-n+24) {
+  border-top: 1px solid black;
+}
+
+.madness-grid > *:nth-last-child(-n+24) {
+  border-bottom: 1px solid black;
+} */
+
+/* create vertical lines */
+/* .madness-grid > *:nth-child(24n-23) {
+  border-left: 1px solid black;
+}
+
+.madness-grid > *:nth-child(24n) {
+  border-right: 1px solid black;
+} */
+
+@media only screen and (max-width: 600px) {
+    .heresy-grid {
+        grid-template-columns: repeat(26, 1fr);
+        grid-template-rows: repeat(30, 1fr);
+        column-gap: 10px;
+    }
+}
+section {
+    width: 100vw;
+}
+
+:global(.locked) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+:global(.unlock .locked) {
+    animation: ping 3s cubic-bezier(0, 0, 0.2, 1) 1 forwards;
+}
+
+@keyframes ping {
+    0%,
+    80% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    0%,
+    5%,
+    10%,
+    15%,
+    20%,
+    25%,
+    30%,
+    35%,
+    40%,
+    45%,
+    50%,
+    55%,
+    60%,
+    65%,
+    70%,
+    75%,
+    80%,
+    85%,
+    90% {
+        margin-left: 5px;
+        margin-right: -5px;
+    }
+    3%,
+    8%,
+    13%,
+    18%,
+    23%,
+    28%,
+    33%,
+    38%,
+    43%,
+    48%,
+    53%,
+    58%,
+    63%,
+    68%,
+    73%,
+    78%,
+    83%,
+    88% {
+        margin-right: 5px;
+        margin-left: -5px;
+    }
+
+    99% {
+        transform: scale(2);
+        opacity: 0;
+        margin-inline: 0;
+    }
+    100% {
+        display: none;
+    }
+}

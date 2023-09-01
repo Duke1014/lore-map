@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-// import './entercode.css'
+import './entercode.css'
 import { UserContext } from './context/user'
 
 export default function EnterCode({setShowCodePrompt}) {

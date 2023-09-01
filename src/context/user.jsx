@@ -169,7 +169,7 @@ function UserProvider({ children }) {
                 name: user.firstName + ' ' + user.lastName,
                 email: user.email,
                 marketing: user.marketingOptIn,
-                nodes: {},
+                nodes: {WelcomeToParadox: true},
                 lastNode: ""
             };
             await saveUser(userForFirestore);
@@ -217,7 +217,7 @@ function UserProvider({ children }) {
                 // debugger;
                 // checkAdmin(authUser.uid);
                 checkNodes(authUser.uid);
-                debugger
+                // debugger
                 
             } else {
                 setNodes({})
@@ -412,6 +412,7 @@ function UserProvider({ children }) {
     }
 
     async function handleEnterCode(e) {
+        // debugger
         setMessage({visibility: 'hidden'})
         const docRef = doc(db, 'codes', 'heresy')  
         const codesSnap = await getDoc(docRef)

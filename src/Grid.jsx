@@ -13,18 +13,18 @@ import BlueBlank from './img/blue-blank.png'
 import Blue from './img/blue.png'
 import { UserContext } from './context/user';
 import madnessBg from './img/madness-bg.png'
-// import DivergenceOne from './DivergenceOne';
-// import DivergenceTwo from './DivergenceTwo';
-// import DivergenceThree from './DivergenceThree';
-// import DivergenceFour from './DivergenceFour';
+import DivergenceOne from './DivergenceOne';
+import DivergenceTwo from './DivergenceTwo';
+import DivergenceThree from './DivergenceThree';
+import DivergenceFour from './DivergenceFour';
 
-// import divonetab from './img/div-one-tab.png';
-// import divtwotab from './img/div-two-tab.png';
-// import divthreetab from './img/div-three-tab.png';
-// import divfourtab from './img/div-four-tab.png';
+import divonetab from './img/div-one-tab.png';
+import divtwotab from './img/div-two-tab.png';
+import divthreetab from './img/div-three-tab.png';
+import divfourtab from './img/div-four-tab.png';
 import filesSealed from './img/FilesSealed.png';
 
-// import heresylines from './img/Heresy-Lines.png'
+import heresylines from './img/Heresy-Lines.png'
 
 export default function Grid() {
 
@@ -613,7 +613,7 @@ export default function Grid() {
                     <h1 className="z-10 text-6xl text-black madness-title" >Madness,<br />1917</h1>
                     <div className='text-black enter-code-two'> <EnterCode /> </div>
                 </div>
-                {/* <div className='flex flex-wrap justify-between w-full px-8 pt-8 text-4xl madness-tab-container' id='madness'>
+                <div className='flex flex-wrap justify-between w-full px-8 pt-8 text-4xl madness-tab-container' id='madness'>
                     {nodes.OutWithABang || nodes.AlienistInTraining ? <>
                         <span
                             className='text-3xl madness-tab'
@@ -682,7 +682,7 @@ export default function Grid() {
                             <img src={filesSealed} alt='tab'/>
                             </span>
                     </>}
-                </div> */}
+                </div>
             </div>
             {madnessMap}
             <div className='space' style={{minHeight: '96px', width: 'full', position: 'absolute'}}>.</div>
