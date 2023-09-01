@@ -39,7 +39,9 @@ export default function Footer({ scrolled, adminMode, setAdminMode }) {
             </p>
             <button className='text-2xl' onClick={scrollToTop}>Scroll To Top</button>
             {loggedIn ? <>
-                <p>You're currently logged in as {user.firstName + ' ' + user.lastName}. <button onClick={() => logout()}>Sign out here.</button></p>
+                <p>You're currently logged in
+                     {/* as {user.firstName + ' ' + user.lastName} */}
+                     . <button onClick={() => logout()}>Sign out here.</button></p>
             </> : <>
                 <p>You are not logged in.</p>
             </>}

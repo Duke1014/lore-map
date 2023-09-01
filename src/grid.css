@@ -2,16 +2,8 @@
 
 .heresy-grid .stamp {
     box-sizing: border-box;
-    /* background: radial-gradient(red, black, transparent, transparent); */
     background: transparent;
     background-size: 60px 60px;
-    /* height: max-content; */
-    /* min-height: 100px; */
-    /* min-width: 100px; */
-    /* border: 2px solid red; */
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    /* scroll-snap-type: proximity; */
     scroll-snap-align: center;
     display: grid;
     place-items: center;
@@ -21,10 +13,6 @@
     margin-inline: 16px;
     position: relative;
     padding: 0px !important;
-    /* opacity: 0.5; */
-}
-.heresy-grid-bg {
-    display:none;
 }
 
 .title-container {
@@ -40,22 +28,22 @@
     width: 100px;
 }
 
-:global(body) {
+body {
     background-size: cover;
     background-position: center;
 }
 
 @supports (background-attachment: fixed) {
-    :global(body) {
+    body {
         background-attachment: fixed;
     }
 }
 
-:global(:root) {
+:root {
     --spacing: 8px;
     --border: 4px;
 }
-:global(*) {
+* {
     font-family: 'Archaic1897', serif;
 }
 
@@ -75,10 +63,6 @@
     width: 24%;
     text-align: center;
     text-indent: 0%;
-    /* background-color: rgba(231, 214, 183, 0.336); */
-    /* border: 1px solid black;  */
-    /* border-top-right-radius: 40% 20%; */
-    /* border-top-left-radius: 40% 20%; */
     font-family: CFRemingtonTypewriter-Regul;
 }
 
@@ -121,16 +105,17 @@
 }
 
 .heresy-grid-bg {
-    /* background-image: url('./img/Heresy-Lines.png'); */
-    /* z-index: 100; */
+    background-image: url('./img/Heresy-Lines.png');
+    z-index: 100;
     width: 100vw;
-    /* display: none; */
+    display: none;
 }
 .vertical-line {
     justify-self: center;
     margin-block: calc(var(--border) * -1);
     border-radius: 100px;
     border-block: 0px solid transparent !important;
+    
 }
 
 .horizontal-line {
@@ -145,6 +130,8 @@
     padding: calc(var(--spacing) - (var(--spacing) - var(--border)));
     background-color: white;
     background-clip: padding-box;
+    min-width: 10px;
+    min-height: 10px;
 }
 
 .horizontal-line#current,
@@ -159,9 +146,7 @@
 
 .heresy-grid {
     grid-template-columns: repeat(25, 1fr);
-    /* grid-template-rows: repeat(28, 1fr); */
     grid-template-rows: repeat(27, 1fr);
-    /* grid-template-rows: 1fr 1fr 1fr min-content 1fr 1fr 1fr min-content 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr min-content min-content min-content 1fr 1fr 1fr 1fr; */
 }
 
 @media only screen and (max-width: 600px) {
@@ -180,12 +165,12 @@
 section {
     width: 100vw;
 }
-:global(.locked) {
+.locked {
     opacity: 0;
     pointer-events: none;
 }
 
-:global(.unlock .locked) {
+.unlock .locked {
     animation: ping 3s cubic-bezier(0, 0, 0.2, 1) 1 forwards;
 }
 

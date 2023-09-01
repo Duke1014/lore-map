@@ -24,8 +24,6 @@ import divthreetab from './img/div-three-tab.png';
 import divfourtab from './img/div-four-tab.png';
 import filesSealed from './img/FilesSealed.png';
 
-import heresylines from './img/Heresy-Lines.png'
-
 export default function Grid() {
 
     const { nodes, tabStyleOne, tabStyleTwo, tabStyleThree, tabStyleFour, setTabStyleOne, setTabStyleTwo, setTabStyleThree, setTabStyleFour } = useContext(UserContext)
@@ -130,7 +128,6 @@ export default function Grid() {
                 </div>
                 <div className="grid place-content-center">
                     <div className='heresy-grid-bg'>
-                        {/* <img src={heresylines} alt={heresylines} /> */}
                     </div>
                     <div className="trans-heresy" style={{gridArea: '1/1/2/2'}} />
                     <div

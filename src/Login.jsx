@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-// import PasswordReset from './PasswordReset';
+import PasswordReset from './PasswordReset';
 import paper from "./img/vintagepaper4.png"
 import { UserContext } from './context/user';
 
